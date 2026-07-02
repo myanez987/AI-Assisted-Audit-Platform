@@ -1,6 +1,45 @@
 # AI-Assisted-Audit-Platform
 
+# AI-Assisted Audit Execution Platform
 
+> **⚠️ ACADEMIC EMBARGO NOTICE:** > The raw Python source code and proprietary datasets for this repository are currently under a strict academic embargo pending final approval and publication by my faculty advisor. The system architecture, design choices, and logic flow are documented below and can be discussed in detail during live interviews.
+
+## 📌 Project Overview
+Small business audits suffer from a massive resource bottleneck. Junior auditors routinely spend 25 to 60 hours on low-judgment, repetitive substantive procedures like tie-outs, recalculations, and anomaly flagging. 
+
+This project solves that bottleneck by deploying an end-to-end **unsupervised machine learning pipeline** that automates general ledger data verification and autodrafts review-ready audit documentation. 
+
+**The Result:** Manual workflows that previously took 40+ hours were compressed into approximately 15 minutes, achieving up to a 99.7% efficiency gain.
+
+## 🏗️ System Architecture & Constraints
+The hardest part of implementing AI in financial auditing is navigating the strict design constraints of audit documentation defensibility (ISA 230 and AS 1215). A black-box LLM hallucination is a critical failure; every output requires 100% traceability.
+
+To solve this, the architecture intentionally separates mathematical analytics from language generation across three distinct modules:
+
+### Module 1: Unsupervised Machine Learning (Anomaly Detection)
+* **Models Used:** Isolation Forest, Median Absolute Deviation (MAD), and Robust Z-scores.
+* **Function:** Learns normal general ledger (GL) patterns and mathematically isolates multivariate accounting anomalies.
+* **Design Choice:** Operates without any labeled training data or external API calls to preserve data privacy.
+
+### Module 2: Statistical Modeling (Business Logic)
+* **Models Used:** OLS (Ordinary Least Squares) and Ridge Regression.
+* **Function:** Learns the relationship between operational drivers and monthly account balances.
+* **Design Choice:** Fully interpretable—every coefficient directly maps to a real business relationship (e.g., dollars per payroll hour) rather than relying on opaque deep learning weights.
+
+### Module 3: Deterministic Text Generation (Audit Defensibility)
+* **Framework:** Python-based rule engine.
+* **Function:** Reads structured flag outputs from Modules 1 and 2 and dynamically fills pre-written narrative templates to draft the final workpapers.
+* **Design Choice:** **No Generative AI or LLMs were used for text generation.** This was a deliberate architectural choice to guarantee that every flagged anomaly is perfectly explainable and traceable back to the raw source data, satisfying strict compliance standards.
+
+## 🏆 Awards & Recognition
+* **AI-Enabled Research Award:** Won 1st Place for AI-enabled research at the CSU Student Research Competition (hosted by San Jose State University, April 2025).
+* **International Academic Acceptance:** Co-authored the associated paper, *"Wait! Let's Use AI First: A Conceptual AI Model to Assist Junior Auditors with Standard Procedures,"* which has been accepted for presentation at the **35th Asian-Pacific Conference on International Accounting Issues** (Nov 2026).
+
+## 💻 Tech Stack
+* **Languages:** Python, SQL
+* **Libraries:** Pandas, Statsmodels, Scikit-learn (Isolation Forest)
+* **Methodologies:** Unsupervised Learning, Robust Statistics, Rule-Based Natural Language Generation
+* 
 ### Recommended Repository Structure
 
 Create this folder structure on your local machine and organize the code you provided into the respective files:
