@@ -1,5 +1,3 @@
-# AI-Assisted-Audit-Platform
-
 # AI-Assisted Audit Execution Platform
 
 > **⚠️ ACADEMIC EMBARGO NOTICE:** > The raw Python source code and proprietary datasets for this repository are currently under a strict academic embargo pending final approval and publication by my faculty advisor. The system architecture, design choices, and logic flow are documented below and can be discussed in detail during live interviews.
